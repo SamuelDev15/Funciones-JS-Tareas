@@ -121,8 +121,9 @@ let songs = [
   { songName: "Evil Eye", autor: "Franz Ferdinand" },
   { songName: "I Really Want to Stay at Your House", autor: "Rosa Walton" },
 ];
-//SI SE QUIERE HACER CON ARROW FUNCTION SERIA DE LA SIGUIENTE MANERA:
-//(eleccion => eleccion.autor === "Rosa Walton";
+//!SI SE QUIERE HACER CON ARROW FUNCTION SERIA DE LA SIGUIENTE MANERA:
+//*(eleccion => eleccion.autor === "Rosa Walton";
+
 let autorPreferido = songs.filter(function (song) {
   return song.autor === "Artic Monkeys";
 });
