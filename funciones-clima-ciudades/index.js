@@ -55,3 +55,23 @@ console.log("Este es el array de ciudades con la temperatura de una sola ciudad:
 // ? Aqui se encuentra el console.log de la funcion que cambio la temperatura de solo una ciudad del array
 
 console.log(cambioCompleto);
+
+// ! CAMBIO DE GRADOS CELCIUS A GRADOS FARENHEIT.
+
+//* Esta pequeña funcion cambia los grados celcius a farenheit.
+function deCelsiusAFarenheit(celsius) {
+    return (celsius * 9 / 5) + 32;
+};
+
+// ? Este es el .map que llamara la temperatura de el array de ciudades para transformarlas en farenheit.
+
+function agregarFarenheit() {
+    let cambioAFarenheit = ciudades.map(function (city) {
+        return { ...city, farenheitTemperature: deCelsiusAFarenheit(city.temperature) }
+    });
+    return cambioAFarenheit;
+};
+let nuevaCaracteristica = agregarFarenheit();
+
+console.log("Aqui se le agrega una nueva caracteristica a las ciudades de grados farenheit:");
+console.log(nuevaCaracteristica);
