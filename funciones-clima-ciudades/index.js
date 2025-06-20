@@ -36,19 +36,22 @@ console.log(filtrarTemperatura);
 
 // ! FUNCION QUE CAMBIE EL CLIMA DE SOLO UNA CIUDAD EN ESPECIFICO.
 
-let cambioTemperaturaCiudad = ciudades.map(function (tempCiudad) {
-    if (tempCiudad.cityName == "Bucaramanga") {
-        let cambioPorCiudad = [-2, -1, 1, 2];
-        let randCambioCiudad = Math.floor(Math.random() * 4);
-        let cambioCiudad = cambioPorCiudad[randCambioCiudad];
-        return { ...tempCiudad, temperature: tempCiudad.temperature + cambioCiudad };
-    } else {
-        return tempCiudad
-    };
-});
+function actualizarClimaCiudad(ciudadFiltrada) {
+    return ciudades.map(function (tempCiudad) {
+        if (tempCiudad.cityName == ciudadFiltrada) {
+            let cambioPorCiudad = [-2, -1, 1, 2];
+            let randCambioCiudad = Math.floor(Math.random() * 4);
+            let cambioCiudad = cambioPorCiudad[randCambioCiudad];
+            return { ...tempCiudad, temperature: tempCiudad.temperature + cambioCiudad };
+        } else {
+            return tempCiudad
+        };
+    });
+};
+let cambioCompleto = actualizarClimaCiudad("Bogotá");
 
-console.log("Este es el array de ciudades con la temperatura de la ciudad escojida cambiada")
+console.log("Este es el array de ciudades con la temperatura de una sola ciudad:")
 
 // ? Aqui se encuentra el console.log de la funcion que cambio la temperatura de solo una ciudad del array
 
-console.log(cambioTemperaturaCiudad);
+console.log(cambioCompleto);
