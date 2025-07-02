@@ -82,3 +82,16 @@ let nuevaPropiedad = agregarEstatura();
 
 console.log("Aqui se le agrega una nueva propiedad al array de personas:");
 console.log(nuevaPropiedad);
+
+//! FUNCION QUE AGREGA UNA NUEVA CARACTERIZTICA DE RESUMEN AL ARRAY
+
+let resumenDePersona = nuevaPropiedad.map(function (personaArray) {
+    let resumen = "Mi nombre es " + personaArray.nombre +
+        " de apellido " + personaArray.apellido +
+        ", mi edad es " + personaArray.edad +
+        " y mi estatura es de " + personaArray.estatura + "cm";
+    return { ...personaArray, resumen: resumen };
+});
+
+console.log("Aqui esta el array con una nueva propiedad en los objetos llamada resumen:");
+console.log(resumenDePersona);
