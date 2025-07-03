@@ -37,3 +37,47 @@ let nombresTeletubbies = [
 for (i = 0; i <= 3; i++) {
     console.log(nombresTeletubbies[i])
 };
+
+//! FUNCION DE DOS ARRAYS QUE SE SUMAN POR POSICIONES CON UN FOR
+
+//? Funcion de suma
+
+function suma(a, b) {
+    return a + b
+};
+
+//? Primer array de numeros
+
+let num1 = [
+    7,
+    4,
+    9,
+    1,
+];
+
+//? Segundo array de numeros
+
+let num2 = [
+    5,
+    2,
+    8,
+    3,
+];
+
+//? Array donde se digitaran los resultados de la suma
+
+let resultadoSuma = [];
+
+//? Array de explicacion de los resultados
+
+let resultado = [];
+
+//? FOR de control para que sume por posicion de los arrays
+
+for (i = 0; i < 4; i++) {
+    resultadoSuma.push((suma(num1[i], num2[i])));
+    resultado.push("El resultado de la suma de " + num1[i] + " + " + num2[i] + " = " + resultadoSuma[i])
+};
+
+console.log(resultadoSuma);
+console.log(resultado);
