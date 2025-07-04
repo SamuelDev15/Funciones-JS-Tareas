@@ -34,7 +34,7 @@ let nombresTeletubbies = [
     "Po",
 ];
 
-for (i = 0; i <= 3; i++) {
+for (let i = 0; i <= 3; i++) {
     console.log(nombresTeletubbies[i])
 };
 
@@ -74,10 +74,32 @@ let resultado = [];
 
 //? FOR de control para que sume por posicion de los arrays
 
-for (i = 0; i < 4; i++) {
+for (let i = 0; i < 4; i++) {
     resultadoSuma.push((suma(num1[i], num2[i])));
     resultado.push("El resultado de la suma de " + num1[i] + " + " + num2[i] + " = " + resultadoSuma[i])
 };
 
 console.log(resultadoSuma);
 console.log(resultado);
+
+//! FUNCION DE TABLAS DE MULTIPLICAR DE EL 1 AL 10
+
+//? Array donde se pondran las tablas de multiplicar
+
+let tablas = [];
+
+//? Funcion de multimplicacion
+
+function multimplicacion(a, b) {
+    return a * b
+};
+
+function crearTabla(n) {
+    for (let i = 1; i <= 10; i++) {
+        tablas.push(n + " X " + i + " = " + multimplicacion(n, i))
+    }
+};
+
+crearTabla(4);
+console.log("Esta es la tabla completa de el numero deseado")
+console.log(tablas);
