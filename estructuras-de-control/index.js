@@ -53,6 +53,7 @@ let num1 = [
     4,
     9,
     1,
+    1
 ];
 
 //? Segundo array de numeros
@@ -62,6 +63,7 @@ let num2 = [
     2,
     8,
     3,
+    1
 ];
 
 //? Array donde se digitaran los resultados de la suma
@@ -74,7 +76,7 @@ let resultado = [];
 
 //? FOR de control para que sume por posicion de los arrays
 
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < num1.length; i++) {
     resultadoSuma.push((suma(num1[i], num2[i])));
     resultado.push("El resultado de la suma de " + num1[i] + " + " + num2[i] + " = " + resultadoSuma[i])
 };
@@ -100,6 +102,50 @@ function crearTabla(n) {
     }
 };
 
-crearTabla(4);
+crearTabla(9);
 console.log("Esta es la tabla completa de el numero deseado")
 console.log(tablas);
+
+//! IMPRIMIR SOLO LOS TRES ULTIMOS NOMBRES DE CARROS DEL ARRAY
+
+const cars = [
+    ["BMW", "Volvo", "Saab"],
+    ["Ford", "Fiat", "Audi"],
+    ["Lambo", "Renault", "Honda"]
+];
+
+let text = "";
+for (let i = 0; i < cars.length; i++) {
+    for (let j = 0; j < cars.length; j++) {
+        if (j = cars.length - 1) {
+            text += " " + cars[i][j];
+        }
+    }
+}
+
+console.log("Estas son las marcas de carros que estan en la ultima columna del array:");
+console.log(text);
+
+
+//! IMPRIMIR TODAS LAS MARCAS DE CARROS EN EL ARRAY MENOS LAS DEL MEDIO
+
+const marcas = [
+    ["BMW", "Volvo", "Saab"],
+    ["Ford", "Fiat", "Audi"],
+    ["Lambo", "Renault", "Honda"]
+];
+
+let carros1 = "";
+for (let i = 0; i < marcas.length; i++) {
+    for (let j = 0; j < marcas.length; j++) {
+        if (i == 0 || i == marcas.length - 1 || j == marcas.length - 1 || j == 0) {
+            carros1 += " " + marcas[i][j] + "\t";
+        } else {
+            carros1 += "\t";
+        }
+    }
+    carros1 += "\n";
+}
+
+console.log("Esta es la matriz de los carros ordenada como matriz:");
+console.log(carros1);
