@@ -7,12 +7,11 @@ function cargarSesiones() {
     const url = urlBase + endpoints + filter;
 
     fetch(url)
-        .then(function (respuesta) {
-            return respuesta.json();
+        .then(function (response) {
+            return response.json();
         })
         .then(function (sesiones) {
             var selector = document.getElementById("selectorF1");
-
             var primera = document.createElement("option");
             primera.value = "";
             primera.textContent = "Seleccione una sesión";
